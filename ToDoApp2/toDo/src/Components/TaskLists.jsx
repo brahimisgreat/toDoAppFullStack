@@ -2,7 +2,7 @@ import { Container, ListGroup } from "react-bootstrap";
 import { DeleteTasks } from "./DeleteTasks";
 import './TaskLists.css'
 
-export const TaskLists = ({ backendTasks,tasks, setTasks }) => {
+export const TaskLists = ({ backendTasks }) => {
   return (
     <Container>
       <ListGroup>

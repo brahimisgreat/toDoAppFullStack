@@ -7,9 +7,9 @@ import { TaskLists } from './Components/TaskLists';
 
 function App() {
 
-  const [tasks, setTasks] = useState([])
   const [backendTasks, setBackendTasks] = useState([])
 
+  // Fetching data from backend
   useEffect(() => {
     async function fetchData(){
       const res = await fetch('http://localhost:3000')
@@ -22,8 +22,8 @@ function App() {
 
   return (
    <Container className='box'>
-    <AddTask  tasks={tasks}  backendTasks={backendTasks} setTasks={setTasks}/>
-    <TaskLists tasks={tasks} setTasks={setTasks} backendTasks={backendTasks}/>
+    <AddTask   backendTasks={backendTasks} />
+    <TaskLists   backendTasks={backendTasks}/>
    </Container>
   )
 }
