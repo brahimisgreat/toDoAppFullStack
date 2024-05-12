@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import { useState, useEffect } from "react";
 
-export const DeleteTasks = ({ title }) => {
+export const DeleteTasks = ({ title, setRefresh }) => {
    
   
   const deleteitem = (title) => {
@@ -11,6 +11,8 @@ export const DeleteTasks = ({ title }) => {
       headers: {
         "Content-Type": "application/json",
       },
+    }).then(() => {
+      setRefresh(true);
     });
   };
   return (

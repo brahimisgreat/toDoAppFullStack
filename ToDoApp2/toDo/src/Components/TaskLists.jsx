@@ -2,7 +2,7 @@ import { Container, ListGroup } from "react-bootstrap";
 import { DeleteTasks } from "./DeleteTasks";
 import './TaskLists.css'
 
-export const TaskLists = ({ backendTasks }) => {
+export const TaskLists = ({ backendTasks, setRefresh }) => {
   return (
     <Container>
       <ListGroup>
@@ -20,7 +20,7 @@ export const TaskLists = ({ backendTasks }) => {
               {task.description}
               </div>
             </div>
-            <DeleteTasks title={task.title} />
+            <DeleteTasks title={task.title} setRefresh={setRefresh} />
           </ListGroup.Item>
         ))}
       </ListGroup>
